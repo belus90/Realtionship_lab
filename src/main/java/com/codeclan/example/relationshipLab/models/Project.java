@@ -21,22 +21,22 @@ public class Project {
     @Column(name = "numberOfDays")
     private int numberOfDays;
 
-//    @ManyToMany
-//    @JsonIgnoreProperties({"projects"})
-//    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
-//    @JoinTable(
-//            name = "employees_projects",
-//            joinColumns = {@JoinColumn(
-//                    name = "project_id",
-//                    nullable = false,
-//                    updatable = false
-//            )},
-//            inverseJoinColumns = {@JoinColumn(
-//                    name = "employee_id",
-//                    nullable = false,
-//                    updatable = false
-//            )}
-//    )
+    @ManyToMany
+    @JsonIgnoreProperties({"projects"})
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+    @JoinTable(
+            name = "employees_projects",
+            joinColumns = { @JoinColumn(
+                    name = "project_id",
+                    nullable = false,
+                    updatable = false)
+            },
+            inverseJoinColumns = { @JoinColumn(
+                    name = "employee_id",
+                    nullable = false,
+                    updatable = false)
+            }
+    )
     private List<Employee> employees;
 
     public Project(String name, int numberOfDays) {

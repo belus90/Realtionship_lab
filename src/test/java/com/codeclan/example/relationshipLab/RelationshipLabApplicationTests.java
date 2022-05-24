@@ -36,17 +36,17 @@ public class RelationshipLabApplicationTests {
 		Employee employee1 = new Employee("Johny", "Williamson", 23525, department);
 		employeeRepository.save(employee1);
 	}
-//	@Test
-//	public void addEmployeesAndProject(){
-//		Department department = new Department("Management");
-//		departmentRepository.save(department);
-//		Employee employee = new Employee("Nemeth", "Kati", 23556, department);
-//		employeeRepository.save(employee);
-//		Project project = new Project("Lab",23);
-//		projectRepository.save(project);
-//
-//		project.addEmployee(employee);
-//		projectRepository.save(project);
-//
-//	}
+	@Test
+	public void addEmployeesAndProject(){
+		Department department = new Department("Management");
+		departmentRepository.save(department);
+		Employee employee = new Employee("Nemeth", "Kati", 23556, department);
+		employeeRepository.save(employee);
+		Project project = new Project("Lab",23);
+		projectRepository.save(project);
+
+		project.addEmployee(employee);
+		projectRepository.save(project);
+
+	}
 }
